@@ -4,6 +4,7 @@
   "description": "Implementation of Magic Mirror made famous on /r/DIY",
   "main": "index.js",
   "scripts": {
+    "start": "http-server; grunt watch;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
