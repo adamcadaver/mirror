@@ -6,12 +6,14 @@
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body ng-app="magicMirror">
-  <div class="col-xs-1">
-    <p>Hello {{'World'}}</p>
-  </div>
-  <div ng-controller="DemoController as demo">
-    Client ID: {{demo.clientId}}
-  </div>
+    <div class="container">
+          <div class="col-xs-6">
+            <quotes/>
+          </div>
+          <div class="col-xs-1">
+            {{'this is the index'}}
+          </div>
+    </div>
     <script src="app.min.js"></script>
 </body>
 </html>

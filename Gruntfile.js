@@ -11,7 +11,7 @@ module.exports = function(grunt) {
           'app.min.js': [
             'node_modules/angular/angular.js',
             'app/app.module.js',
-            'app/app.controller.js']
+            'app/quotes/quotes.directive.js']
         }
       }
     },
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
         options: {
           spawn: false,
         },
-  },
-},
+      },
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
