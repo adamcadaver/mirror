@@ -11,7 +11,10 @@ module.exports = function(grunt) {
           'app.min.js': [
             'node_modules/angular/angular.js',
             'app/app.module.js',
-            'app/quotes/quotes.directive.js']
+            'app/quotes/quotes.service.js',
+            'app/quotes/quotes.directive.js',
+            'app/quotes/quotes.controller.js'
+            ]
         }
       }
     },
