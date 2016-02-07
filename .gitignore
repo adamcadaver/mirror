@@ -1,3 +1,9 @@
 node_modules/
+typings/
 **/.DS_Store
 app.min.js
+/src
+**/*.baseDir.ts
+.tscache/
+app.js
+app.js.map
