@@ -1,6 +1,16 @@
 module.exports = function(grunt) {
-
   grunt.initConfig({
+    ts: {
+      default: {
+        src: [
+          'app/app.module.ts',
+          'app/quotes/quotes.service.ts',
+          'app/quotes/quotes.directive.ts',
+          'app/quotes/quotes.controller.ts'
+        ],
+        out: 'app.js'
+      }
+    },
     uglify: {
       options: {
         mangle: false,
@@ -10,28 +20,24 @@ module.exports = function(grunt) {
         files: {
           'app.min.js': [
             'node_modules/angular/angular.js',
-            'app/app.module.js',
-            'app/quotes/quotes.service.js',
-            'app/quotes/quotes.directive.js',
-            'app/quotes/quotes.controller.js'
-            ]
+            'app.js'
+          ]
         }
       }
     },
     watch: {
       scripts: {
-        files: ['app/**/*.js'],
-        tasks: ['uglify'],
+        files: ['app/**/*.ts'],
+        tasks: ['ts', 'uglify'],
         options: {
           spawn: false,
         },
-      },
-    },
+      }
+    }
   });
-
+  grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['uglify']);
-
+  grunt.registerTask("default", ["ts", 'uglify']);
 };
