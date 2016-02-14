@@ -1,8 +1,6 @@
 /// <reference path="../../typings/browser.d.ts" />
+/// <reference path="quotes.d.ts" />
 
-interface IQuotesService {
-    foo: string;
-}
 
 class QuotesService implements IQuotesService {
     public foo: string;

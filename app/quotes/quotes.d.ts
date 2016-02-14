@@ -1,0 +1,3 @@
+interface IQuotesService {
+    foo: string;
+}

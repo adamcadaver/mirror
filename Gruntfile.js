@@ -35,9 +35,9 @@ module.exports = function(grunt) {
     }
   });
   grunt.loadNpmTasks("grunt-ts");
-  grunt.loadNpmTasks("grunt-tslint"); // Not part of the build yet
+  grunt.loadNpmTasks("grunt-tslint");
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask("default", ["ts", 'uglify']);
+  grunt.registerTask("default", ["tslint", "ts", 'uglify']);
 };
