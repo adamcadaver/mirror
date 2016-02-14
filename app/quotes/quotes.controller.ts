@@ -1,9 +1,9 @@
 /// <reference path="../../typings/browser.d.ts" />
 
 class QuotesController {
-    static $inject = ["quotesService"];
-    public foo;
-    constructor(quotesService) {
+    static $inject: string[] = ["quotesService"];
+    public foo: string;
+    constructor(quotesService: IQuotesService) {
         this.foo = quotesService.foo;
     }
 }
