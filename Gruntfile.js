@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  require('load-grunt-tasks')(grunt);
   grunt.initConfig({
     ts: {
       default: {
@@ -24,20 +25,23 @@ module.exports = function(grunt) {
       default: {files: {'app.min.js': ['app.js']}
       }
     },
+    karma: {
+      unit: {
+        configFile: "karma.conf.js"
+      }
+    },
     watch: {
       scripts: {
         files: ['app/**/*.ts'],
-        tasks: ['ts', 'uglify'],
+        tasks: ["build"],
         options: {
           spawn: false,
         },
       }
     }
   });
-  grunt.loadNpmTasks("grunt-ts");
-  grunt.loadNpmTasks("grunt-tslint");
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask("default", ["tslint", "ts", 'uglify']);
+  grunt.registerTask("build", ["tslint", "ts", 'uglify']);
+  grunt.registerTask("test", ["karma"]);
+  grunt.registerTask("default", ["build"]);
 };
