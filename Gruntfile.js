@@ -2,27 +2,26 @@ module.exports = function(grunt) {
   grunt.initConfig({
     ts: {
       default: {
-        src: [
-          'app/app.module.ts',
-          'app/quotes/quotes.service.ts',
-          'app/quotes/quotes.directive.ts',
-          'app/quotes/quotes.controller.ts'
-        ],
+        src: ['app/**/*.ts'],
         out: 'app.js'
       }
+    },
+    tslint: {
+        default: {
+          options: {
+            configuration: "tslint.json"
+          },
+          files : {
+            src: ['app/**/*.ts']
+          }
+        }
     },
     uglify: {
       options: {
         mangle: false,
         beautify: true
       },
-      my_target: {
-        files: {
-          'app.min.js': [
-            'node_modules/angular/angular.js',
-            'app.js'
-          ]
-        }
+      default: {files: {'app.min.js': ['app.js']}
       }
     },
     watch: {
@@ -36,6 +35,7 @@ module.exports = function(grunt) {
     }
   });
   grunt.loadNpmTasks("grunt-ts");
+  grunt.loadNpmTasks("grunt-tslint"); // Not part of the build yet
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
