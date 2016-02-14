@@ -11,6 +11,5 @@ class Quotes implements ng.IDirective {
     }
 }
 
-
 angular.module("magicMirror")
     .directive("quotes", Quotes.instance);

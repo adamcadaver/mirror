@@ -9,6 +9,5 @@ class QuotesController {
     }
 }
 
-
 angular.module("magicMirror")
     .controller("quotesController", QuotesController);
